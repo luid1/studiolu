@@ -1,28 +1,360 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="new.css">
+    <title>FAQs - Estúdio de Tatuagem</title>
+    <style>
+        :root {
+            --creme: #F5F5DC;
+            --verde-oliva: #6B8E23;
+            --marrom-forte: #8B4513;
+            --caramelo: #D2691E;
+            --bege-areia: #F4A460;
+            --marrom-terra: #A0522D;
+            --verde: #556B2F;
+        }
+        
+
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .faq-header h2 {
+            font-size: 2.5rem;
+            color: var(--marrom-forte);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .faq-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--caramelo);
+        }
+        
+        .faq-header p {
+            font-size: 1.1rem;
+            color: var(--marrom-terra);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--verde-oliva);
+        }
+        
+        .faq-question {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--marrom-forte);
+            background-color: var(--bege-areia);
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--caramelo);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: var(--marrom-terra);
+            background-color: white;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .faq-header h2 {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
-<body>
-    <section class="wrapper-main">
-        <h2 class="h2novo">Memorias da pele</h2>
-        <p class="pnovo">Histórias que inspiram e marcam a pele de gente como a gente</p>
-        <div class="flex-container">
-            <div class="card">
-                <p class="pvideo">Documentário Jaciara Formiga</p>
-                <video src="files/video1.mp4" margin="0 auto" width="250px" controls></video>
-                  <p class="veja">Veja o video completo<span class="vejas"><a href=""> clique aqui</a></span></p>
-            </div>
-             <div class="card">
-                <p class="pvideo">Documentário Luana Roberto</p>
-                <video src="files/video2.mp4" margin="0 auto" width="250px" controls></video>
-                <p class="veja">Veja o video completo<span class="vejas"><a href=""> clique aqui</a></span></p>
-            </div>
+
+    <section class="faq-section">
+        <div class="faq-header">
+            <h2>Perguntas Frequentes</h2>
+            <p>Tire suas dúvidas sobre o processo de tatuagem, cuidados e muito mais.</p>
         </div>
         
+        <div class="faq-container">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question">Tatuagem dói?</div>
+                <div class="faq-answer">
+                    <p>Sim, mas a dor varia de pessoa para pessoa e conforme a região do corpo. Em geral, é uma dor suportável e rápida.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo dura uma sessão?</div>
+                <div class="faq-answer">
+                    <p>Depende do tamanho, complexidade e local da tatuagem. Pode variar de 30 minutos a várias horas.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <div class="faq-question">Precisa marcar horário?</div>
+                <div class="faq-answer">
+                    <p>Sim. Trabalhamos com horário agendado para garantir atenção exclusiva, segurança e qualidade.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <div class="faq-question">A tatuagem desbota?</div>
+                <div class="faq-answer">
+                    <p>Com o tempo, toda tatuagem pode sofrer leve desgaste, principalmente sem cuidados. Protetor solar e hidratação ajudam a manter a cor por muitos anos.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+                <div class="faq-question">Quais cuidados devo ter após tatuar?</div>
+                <div class="faq-answer">
+                    <p>Lavar com sabonete neutro, hidratar a pele, evitar sol, piscina e mar por cerca de 30 dias e não coçar ou arrancar casquinhas.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 6 -->
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo leva para cicatrizar?</div>
+                <div class="faq-answer">
+                    <p>A cicatrização superficial leva em média 15 a 20 dias. A cicatrização total ocorre em até 45 dias.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 7 -->
+            <div class="faq-item">
+                <div class="faq-question">Posso tatuar grávida ou amamentando?</div>
+                <div class="faq-answer">
+                    <p>Não é recomendado. O ideal é aguardar esse período passar para sua segurança e a do bebê.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 8 -->
+            <div class="faq-item">
+                <div class="faq-question">Tatuagem pode inflamar?</div>
+                <div class="faq-answer">
+                    <p>Se os cuidados não forem seguidos, sim. Por isso, seguimos protocolos rígidos de biossegurança e orientamos corretamente o pós-tatuagem.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 9 -->
+            <div class="faq-item">
+                <div class="faq-question">Menores de idade podem tatuar?</div>
+                <div class="faq-answer">
+                    <p>Não, nem com autorização formal dos responsáveis, conforme a legislação vigente.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 10 -->
+            <div class="faq-item">
+                <div class="faq-question">Qual o valor da tatuagem?</div>
+                <div class="faq-answer">
+                    <p>O valor varia conforme tamanho, estilo, complexidade e tempo de trabalho. Orçamentos são feitos após análise da ideia.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 11 -->
+            <div class="faq-item">
+                <div class="faq-question">Posso fazer cover up (cobrir outra tatuagem)?</div>
+                <div class="faq-answer">
+                    <p>Sim! Avaliamos cada caso para criar a melhor solução estética possível.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 12 -->
+            <div class="faq-item">
+                <div class="faq-question">É possível retocar a tatuagem?</div>
+                <div class="faq-answer">
+                    <p>Sim. Alguns trabalhos incluem retoque dentro de um prazo combinado, desde que os cuidados tenham sido seguidos.</p>
+                </div>
+            </div>
+            
+            <!-- FAQ Item 13 -->
+            <div class="faq-item">
+                <div class="faq-question">O material é descartável?</div>
+                <div class="faq-answer">
+                    <p>Sim. Utilizamos materiais descartáveis e esterilizados, seguindo todas as normas da Anvisa.</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+     
+        .faq-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .faq-header h2 {
+            font-size: 2.5rem;
+            color: var(--marrom-forte);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .faq-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--caramelo);
+        }
+        
+        .faq-header p {
+            font-size: 1.1rem;
+            color: var(--marrom-terra);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--verde-oliva);
+        }
+        
+        .faq-question {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--marrom-forte);
+            background-color: var(--bege-areia);
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--caramelo);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: var(--marrom-terra);
+            background-color: white;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .faq-header h2 {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
 </body>
 </html>
